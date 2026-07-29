@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:41:45 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/29 18:54:07 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/29 20:28:05 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class Cat : public Animal
 {
 	public:
 		Cat();
-		// Cat(const Cat &obj);
-		// Cat &operator=(const Cat &obj);
-		// ~Cat();
+		Cat(const Cat &obj);
+		Cat &operator=(const Cat &obj);
+		~Cat();
 
 		void makeSound();
 };

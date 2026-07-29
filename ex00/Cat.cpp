@@ -6,20 +6,38 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:41:16 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/29 18:55:20 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/29 20:46:55 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
 	_type = "Cat";
 	std::cout << "Cat Default Constructor Called\n";
+}
+
+Cat::Cat(const Cat &obj)
+{
+	_type = obj._type;
+	std::cout << "Cat Copy Constructor Called\n";
+}
+
+Cat &Cat::operator=(const Cat &obj)
+{
+	_type = obj._type;
+	return *this;
+}
+
+Cat::~Cat()
+{
+	std::cout << "Cat Destructor Called\n";
 }
 
 void Cat::makeSound()
 {
 	std::cout << _type << " shout Meooow\n";
 }
+

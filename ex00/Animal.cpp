@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:40:56 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/29 18:47:10 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/29 20:40:42 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Animal &Animal::operator=(const Animal &obj)
 
 void Animal::makeSound() const
 {
-	std::cout << _type << "\n";
+	std::cout << _type << "Sound\n";
 }
 
 std::string Animal::getType() const
@@ -41,5 +41,5 @@ std::string Animal::getType() const
 
 Animal::~Animal()
 {
-	std::cout << "Destructor Called\n";
+	std::cout << "Animal Destructor Called\n";
 }

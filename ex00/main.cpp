@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:50:20 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/29 20:58:59 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/29 20:59:32 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,16 @@
 
 int main()
 {
+
+	const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound();
+	j->makeSound();
+	meta->makeSound();
+
 	// Animal a1;
 	// Cat a2;
 	// Dog a3;
@@ -28,7 +38,6 @@ int main()
 	// std::cout << "Get Type:" <<  a1.getType() << std::endl;
 	// std::cout << "Get Type:" <<  a2.getType() << std::endl;
 	// std::cout << "Get Type:" <<  a3.getType() << std::endl;
-
 
 	return (0);
 }

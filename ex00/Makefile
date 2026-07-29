@@ -6,11 +6,11 @@
 #    By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/19 16:16:52 by knomura           #+#    #+#              #
-#    Updated: 2026/07/29 16:27:54 by knomura          ###   ########.fr        #
+#    Updated: 2026/07/29 20:56:59 by knomura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Poly
+NAME = Animal
 
 CXX = c++
 

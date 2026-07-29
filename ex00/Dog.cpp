@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:41:30 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/29 20:51:50 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/29 20:55:53 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ Dog::~Dog()
 
 void Dog::makeSound()
 {
-	std::cout << _type << " shout Meooow\n";
+	std::cout << _type << " shout Woof\n";
 }

@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:50:20 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/29 21:06:12 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 14:10:24 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
-
 	const Animal *meta = new Animal();
 	const Animal *j = new Dog();
 	const Animal *i = new Cat();
@@ -26,6 +27,23 @@ int main()
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+
+	delete i;
+	delete j;
+	delete meta;
+
+	std::cout << "------------- Wrong Animals --------------" << std::endl;
+	
+	const WrongAnimal *par = new WrongAnimal();
+	const WrongAnimal *k = new WrongCat();
+
+	std::cout << par->getType() << std::endl;
+	std::cout << k->getType() << std::endl;
+	par->wrongMakeSound();
+	k->wrongMakeSound();
+
+	delete par;
+	delete k;
 
 	// Animal a1;
 	// Cat a2;
@@ -38,11 +56,6 @@ int main()
 	// std::cout << "Get Type:" <<  a1.getType() << std::endl;
 	// std::cout << "Get Type:" <<  a2.getType() << std::endl;
 	// std::cout << "Get Type:" <<  a3.getType() << std::endl;
-
-	delete i;
-	delete j;
-	delete meta;
-
 
 	return (0);
 }

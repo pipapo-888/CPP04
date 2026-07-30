@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 15:14:45 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 16:46:24 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 16:51:08 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ Brain::Brain()
 
 Brain::Brain(const Brain &obj)
 {
+	for (int i = 0; i < 100; i++)
+		ideas[i] = obj.ideas[i];
 	std::cout << "Brain Copy Constructor Called\n";
 }
 
 Brain &Brain::operator=(const Brain &obj)
 {
-	std::string strs[100];
-	strs = obj.ideas;
-	ideas = obj.ideas;
+	for (int i = 0; i < 100; i++)
+		ideas[i] = obj.ideas[i];
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:50:20 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 15:09:49 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 20:44:43 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,55 +16,41 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-	const Animal *meta = new Animal();
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+	Animal *animals[10];
 
-	delete i;
-	delete j;
-	delete meta;
+	for (int i = 0; i < 5; i++)
+	{
+		animals[i * 2] = new Dog();
+		animals[i * 2 + 1] = new Cat();
+	}
 
-	std::cout << "------------- Wrong Animals --------------" << std::endl;
+	std::cout << "--------- Check Destructor Order -----------" <<  std::endl;
+
+	for (int i = 0; i < 10; i++)
+		delete animals[i];
+
+	std::cout << "--------- Check Copy -----------" <<  std::endl;
 	
-	const WrongAnimal *par = new WrongAnimal();
-	const WrongAnimal *k = new WrongCat();
-
-	std::cout << par->getType() << std::endl;
-	std::cout << k->getType() << std::endl;
-	par->wrongMakeSound();
-	k->wrongMakeSound();
-
-	delete par;
-	delete k;
-
-	std::cout << "------------- Other Tests --------------" << std::endl;
 	
+
 	Cat c1;
-	Cat c2(c1);
-	
+
 	std::cout << std::endl;
-	
-	Animal a1;
-	Cat a2;
-	Dog a3;
 
-	std::cout << "------------- Other Tests 2 --------------" << std::endl;
+	const Animal *j = new Dog();
 
-	a1.makeSound();
-	a2.makeSound();
-	a3.makeSound();
+	std::cout << std::endl;
 
-	std::cout << "Get Type:" <<  a1.getType() << std::endl;
-	std::cout << "Get Type:" <<  a2.getType() << std::endl;
-	std::cout << "Get Type:" <<  a3.getType() << std::endl;
+	const Animal *i = new Cat();
+
+	std::cout << std::endl;
+
+	delete j;
+	delete i;
 
 	return (0);
 }

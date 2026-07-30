@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:41:45 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 13:10:31 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 17:02:33 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
+private:
+	Brain *_brain;
+
 public:
 	Cat();
 	Cat(const Cat &obj);

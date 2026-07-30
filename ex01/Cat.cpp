@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:41:16 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 15:08:08 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 21:00:25 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,30 @@
 
 Cat::Cat() : Animal()
 {
+	_brain = new Brain;
 	_type = "Cat";
 	std::cout << "Cat Default Constructor Called\n";
 }
 
 Cat::Cat(const Cat &obj) : Animal(obj)
 {
+	_brain = new Brain(*obj._brain);
 	std::cout << "Cat Copy Constructor Called\n";
 }
 
 Cat &Cat::operator=(const Cat &obj)
 {
-	Animal::operator=(obj);
+	if (this != &obj)
+	{	
+		Animal::operator=(obj);
+		*_brain = *obj._brain;
+	}
 	return *this;
 }
 
 Cat::~Cat()
 {
+	delete _brain;
 	std::cout << "Cat Destructor Called\n";
 }
 

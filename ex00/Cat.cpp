@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:41:16 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 11:30:14 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 15:08:08 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@ Cat::Cat() : Animal()
 	std::cout << "Cat Default Constructor Called\n";
 }
 
-Cat::Cat(const Cat &obj)
+Cat::Cat(const Cat &obj) : Animal(obj)
 {
-	_type = obj._type;
 	std::cout << "Cat Copy Constructor Called\n";
 }
 
 Cat &Cat::operator=(const Cat &obj)
 {
-	_type = obj._type;
+	Animal::operator=(obj);
 	return *this;
 }
 

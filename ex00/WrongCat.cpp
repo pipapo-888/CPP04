@@ -19,15 +19,14 @@ WrongCat::WrongCat() : WrongAnimal()
 	std::cout << "WrongCat Default Constructor Called\n";
 }
 
-WrongCat::WrongCat(const WrongCat &obj)
+WrongCat::WrongCat(const WrongCat &obj) : WrongAnimal(obj)
 {
-	_type = obj._type;
 	std::cout << "WrongCat Copy Constructor Called\n";
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &obj)
 {
-	_type = obj._type;
+	WrongAnimal::operator=(obj);
 	return *this;
 }
 
@@ -40,4 +39,3 @@ void WrongCat::wrongMakeSound() const
 {
 	std::cout << _type << " shout Meooow\n";
 }
-

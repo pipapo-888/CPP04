@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:41:30 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 11:30:28 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 15:01:55 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@ Dog::Dog() : Animal()
 	std::cout << "Dog Default Constructor Called\n";
 }
 
-Dog::Dog(const Dog &obj)
+Dog::Dog(const Dog &obj) : Animal(obj)
 {
-	_type = obj._type;
 	std::cout << "Dog Copy Constructor Called\n";
 }
 
 Dog &Dog::operator=(const Dog &obj)
 {
-	_type = obj._type;
+	Animal::operator=(obj);
 	return *this;
 }
 

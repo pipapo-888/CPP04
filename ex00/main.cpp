@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:50:20 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 14:10:24 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 14:58:00 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,13 @@ int main()
 	delete par;
 	delete k;
 
+	std::cout << "------------- Other Tests --------------" << std::endl;
+	
+	Cat c1;
+	Cat c2(c1);
+	
+	std::cout << std::endl;
+	
 	// Animal a1;
 	// Cat a2;
 	// Dog a3;

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/29 16:50:34 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 15:25:48 by knomura          ###   ########.fr       */
+/*   Created: 2026/07/30 15:14:45 by knomura           #+#    #+#             */
+/*   Updated: 2026/07/30 16:46:24 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#include <iostream>
+#include "Brain.hpp"
 
-#include "Animal.hpp"
-
-class Dog : public Animal
+Brain::Brain()
 {
-	public:
-		Dog();
-		Dog(const Dog &obj);
-		Dog &operator=(const Dog &obj);
-		~Dog();
+	std::cout << "Brain Default Constructor Called\n";
+}
 
-		void makeSound() const;
-};
+Brain::Brain(const Brain &obj)
+{
+	std::cout << "Brain Copy Constructor Called\n";
+}
 
+Brain &Brain::operator=(const Brain &obj)
+{
+	std::string strs[100];
+	strs = obj.ideas;
+	ideas = obj.ideas;
+	return *this;
+}
 
-#endif
+Brain::~Brain()
+{
+	std::cout << "Brain Destructor Called\n";
+}

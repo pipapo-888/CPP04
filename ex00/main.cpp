@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:50:20 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 14:58:00 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 15:09:49 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,19 @@ int main()
 	
 	std::cout << std::endl;
 	
-	// Animal a1;
-	// Cat a2;
-	// Dog a3;
+	Animal a1;
+	Cat a2;
+	Dog a3;
 
-	// a1.makeSound();
-	// a2.makeSound();
-	// a3.makeSound();
+	std::cout << "------------- Other Tests 2 --------------" << std::endl;
 
-	// std::cout << "Get Type:" <<  a1.getType() << std::endl;
-	// std::cout << "Get Type:" <<  a2.getType() << std::endl;
-	// std::cout << "Get Type:" <<  a3.getType() << std::endl;
+	a1.makeSound();
+	a2.makeSound();
+	a3.makeSound();
+
+	std::cout << "Get Type:" <<  a1.getType() << std::endl;
+	std::cout << "Get Type:" <<  a2.getType() << std::endl;
+	std::cout << "Get Type:" <<  a3.getType() << std::endl;
 
 	return (0);
 }

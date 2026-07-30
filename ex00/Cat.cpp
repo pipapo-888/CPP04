@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:41:16 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/29 20:46:55 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 11:30:14 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Cat::~Cat()
 	std::cout << "Cat Destructor Called\n";
 }
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
 	std::cout << _type << " shout Meooow\n";
 }

@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:50:34 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/29 20:50:46 by knomura          ###   ########.fr       */
+/*   Updated: 2026/07/30 13:06:00 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal
 		Dog &operator=(const Dog &obj);
 		~Dog();
 
-		void makeSound();
+		void makeSound() const;
 };
 
 

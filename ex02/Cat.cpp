@@ -13,14 +13,14 @@
 #include <iostream>
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
 	_brain = new Brain;
 	_type = "Cat";
 	std::cout << "Cat Default Constructor Called\n";
 }
 
-Cat::Cat(const Cat &obj) : Animal(obj)
+Cat::Cat(const Cat &obj) : AAnimal(obj)
 {
 	_brain = new Brain(*obj._brain);
 	std::cout << "Cat Copy Constructor Called\n";
@@ -30,7 +30,7 @@ Cat &Cat::operator=(const Cat &obj)
 {
 	if (this != &obj)
 	{	
-		Animal::operator=(obj);
+		AAnimal::operator=(obj);
 		*_brain = *obj._brain;
 	}
 	return *this;

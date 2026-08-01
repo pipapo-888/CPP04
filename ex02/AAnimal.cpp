@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:40:56 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 11:30:02 by knomura          ###   ########.fr       */
+/*   Updated: 2026/08/01 15:04:15 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal() : _type("Default Animal")
+AAnimal::AAnimal() : _type("Default Animal")
 {
-	std::cout << "Animal Default Constructor Called\n";
+	std::cout << "AAnimal Default Constructor Called\n";
 }
 
-Animal::Animal(const Animal &obj) : _type(obj._type)
+AAnimal::AAnimal(const AAnimal &obj) : _type(obj._type)
 {
-	std::cout << "Animal Copy Constructor Called\n";
+	std::cout << "AAnimal Copy Constructor Called\n";
 }
 
-Animal &Animal::operator=(const Animal &obj)
+AAnimal &AAnimal::operator=(const AAnimal &obj)
 {
 	_type = obj._type;
 	return *this;
 }
 
-void Animal::makeSound() const
-{
-	std::cout << _type << " Sound\n";
-}
-
-std::string Animal::getType() const
+std::string AAnimal::getType() const
 {
 	return (_type);
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "Animal Destructor Called\n";
+	std::cout << "AAnimal Destructor Called\n";
 }

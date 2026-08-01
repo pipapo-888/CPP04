@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:50:20 by knomura           #+#    #+#             */
-/*   Updated: 2026/08/01 14:06:29 by knomura          ###   ########.fr       */
+/*   Updated: 2026/08/01 15:06:24 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int main()
 		animals[i * 2 + 1] = new Cat();
 	}
 
-	std::cout << "--------- Check Destructor Order -----------" <<  std::endl;
+	for (int i = 0; i < 10; i++)
+		animals[i]->makeSound();
+
+	std::cout << "--------- Check Destructor Order -----------" << std::endl;
 
 	for (int i = 0; i < 10; i++)
 		delete animals[i];

@@ -47,3 +47,8 @@ void Cat::makeSound() const
 	std::cout << _type << " shout Meooow\n";
 }
 
+Brain *Cat::getBrain() const
+{
+	return (_brain);
+}
+

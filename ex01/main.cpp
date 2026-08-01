@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 16:50:20 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 20:44:43 by knomura          ###   ########.fr       */
+/*   Updated: 2026/08/01 14:06:29 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,23 @@ int main()
 	for (int i = 0; i < 10; i++)
 		delete animals[i];
 
-	std::cout << "--------- Check Copy -----------" <<  std::endl;
-	
-	
+	std::cout << "--------- Deep Copy Check -----------" << std::endl;
 
-	Cat c1;
+	Dog dogOriginal;
+	dogOriginal.getBrain()->setIdea(0, "original idea");
 
-	std::cout << std::endl;
+	Dog dogCopyCtor(dogOriginal);
+	Dog dogCopyAssign;
+	dogCopyAssign = dogOriginal;
 
-	const Animal *j = new Dog();
+	std::cout << "dogOriginal  brain address: " << dogOriginal.getBrain() << std::endl;
+	std::cout << "dogCopyCtor  brain address: " << dogCopyCtor.getBrain() << std::endl;
+	std::cout << "dogCopyAssign brain address: " << dogCopyAssign.getBrain() << std::endl;
 
-	std::cout << std::endl;
-
-	const Animal *i = new Cat();
-
-	std::cout << std::endl;
-
-	delete j;
-	delete i;
+	dogOriginal.getBrain()->setIdea(0, "changed after copy");
+	std::cout << "dogOriginal idea[0] changed to: " << dogOriginal.getBrain()->getIdea(0) << std::endl;
+	std::cout << "dogCopyCtor idea[0]   (should be unaffected): " << dogCopyCtor.getBrain()->getIdea(0) << std::endl;
+	std::cout << "dogCopyAssign idea[0] (should be unaffected): " << dogCopyAssign.getBrain()->getIdea(0) << std::endl;
 
 	return (0);
 }

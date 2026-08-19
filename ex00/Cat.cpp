@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:41:16 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 15:08:08 by knomura          ###   ########.fr       */
+/*   Updated: 2026/08/19 16:38:00 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ void Cat::makeSound() const
 {
 	std::cout << _type << " shout Meooow\n";
 }
-

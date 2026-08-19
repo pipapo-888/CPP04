@@ -6,7 +6,7 @@
 #    By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/19 16:16:52 by knomura           #+#    #+#              #
-#    Updated: 2026/07/30 14:41:25 by knomura          ###   ########.fr        #
+#    Updated: 2026/08/19 16:45:51 by knomura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,19 +14,23 @@ NAME = Animal
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -MMD -MP
 
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
+
+DEPS = $(OBJS:%.o=%.d)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
+-include $(DEPS)
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(DEPS)
 
 fclean: clean
 	rm -f $(NAME)

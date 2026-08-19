@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 17:41:16 by knomura           #+#    #+#             */
-/*   Updated: 2026/07/30 21:00:25 by knomura          ###   ########.fr       */
+/*   Updated: 2026/08/19 17:00:37 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,3 @@ Brain *Cat::getBrain() const
 {
 	return (_brain);
 }
-

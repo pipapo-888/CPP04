@@ -11,6 +11,8 @@ public:
 	Ice &operator=(const Ice& obj);
 	~Ice();
 
+
+	AMateria* clone() const;
 };
 
 #endif

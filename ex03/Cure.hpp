@@ -11,6 +11,7 @@ public:
 	Cure &operator=(const Cure& obj);
 	~Cure();
 
+	AMateria* clone() const;
 };
 
 #endif
